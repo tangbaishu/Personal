@@ -1,0 +1,162 @@
+{
+  //设置 字体编码格式
+  "files.encoding": "utf8",
+  //设置字体大小
+  "editor.fontSize": 16,
+  // 重新设定tabsize
+  "editor.tabSize": 4,
+  //延时保存
+  "files.autoSave": "onWindowChange",
+  //延时保存时间
+  "files.autoSaveDelay": 100,
+  /**
+  *	C/C++ 已声明变量名称提升
+  *	Tag Parser: 提供非上下文感知的“模糊”结果。
+  *	Default: 通过单独的 IntelliSense 流程提供上下文感知结果。
+  */
+  "C_Cpp.intelliSenseEngine": "default",
+
+  // 在使用搜索功能时，将这些文件夹/文件排除在外
+"search.exclude": 
+	{
+    "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h":true,
+    "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h":true,
+    "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f415xx.h":true,
+    "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f417xx.h":true,
+    "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f423xx.h":true,
+    "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f427xx.h":true,
+    "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h":true,
+    "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f437xx.h":true,
+    "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f439xx.h":true,
+    "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h":true,
+    "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f469xx.h":true,
+    "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f479xx.h":true,
+		"**/node_modules": true,
+		"**/bower_components": true,
+		"**/target": true,
+		"**/logs": true,
+		"**/SL_Prj":true,
+		"**/MDK-ARM":true,
+    //排除文件格式
+	  "**/*.o":true,
+    "**/*.map":true
+	}, 
+// 左侧工程目录中需要排除的文件夹/文件
+"files.exclude": 
+{	
+	//排除文件夹格式
+  "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h":true,
+  "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h":true,
+  "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f415xx.h":true,
+  "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f417xx.h":true,
+  "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f423xx.h":true,
+  "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f427xx.h":true,
+  "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h":true,
+  "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f437xx.h":true,
+  "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f439xx.h":true,
+  "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h":true,
+  "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f469xx.h":true,
+  "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f479xx.h":true,
+
+	"**/.git": true,
+	"**/.svn": true,
+	"**/.hg": true,
+	"**/CVS": true,
+	"**/.DS_Store": true,
+	"**/.mxproject":true,
+	"**/SL_Prj":true,
+	"**/MDK-ARM":true,
+	//排除文件格式
+	"**/*.ioc":true,
+	"**/*.jflash":true,
+	"**/*.js": {
+		"when": "$(basename).ts" //ts编译后生成的js文件将不会显示在工作空中
+	},
+	"**/node_modules": true
+},
+
+
+
+  "C_Cpp_Runner.cCompilerPath": "gcc",
+  "C_Cpp_Runner.cppCompilerPath": "g++",
+  "C_Cpp_Runner.debuggerPath": "gdb",
+  "C_Cpp_Runner.cStandard": "",
+  "C_Cpp_Runner.cppStandard": "",
+  "C_Cpp_Runner.msvcBatchPath": "C:/Program Files/Microsoft Visual Studio/VR_NR/Community/VC/Auxiliary/Build/vcvarsall.bat",
+  "C_Cpp_Runner.useMsvc": false,
+  "C_Cpp_Runner.warnings": [
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-Wshadow",
+    "-Wformat=2",
+    "-Wcast-align",
+    "-Wconversion",
+    "-Wsign-conversion",
+    "-Wnull-dereference"
+  ],
+  "C_Cpp_Runner.msvcWarnings": [
+    "/W4",
+    "/permissive-",
+    "/w14242",
+    "/w14287",
+    "/w14296",
+    "/w14311",
+    "/w14826",
+    "/w44062",
+    "/w44242",
+    "/w14905",
+    "/w14906",
+    "/w14263",
+    "/w44265",
+    "/w14928"
+  ],
+  "C_Cpp_Runner.enableWarnings": true,
+  "C_Cpp_Runner.warningsAsError": false,
+  "C_Cpp_Runner.compilerArgs": [],
+  "C_Cpp_Runner.linkerArgs": [],
+  "C_Cpp_Runner.includePaths": [],
+  "C_Cpp_Runner.includeSearch": [
+    "*",
+    "**/*"
+  ],
+  "C_Cpp_Runner.excludeSearch": [
+    "**/build",
+    "**/build/**",
+    "**/.*",
+    "**/.*/**",
+    "**/.vscode",
+    "**/.vscode/**"
+  ],
+  "C_Cpp_Runner.useAddressSanitizer": false,
+  "C_Cpp_Runner.useUndefinedSanitizer": false,
+  "C_Cpp_Runner.useLeakSanitizer": false,
+  "C_Cpp_Runner.showCompilationTime": false,
+  "C_Cpp_Runner.useLinkTimeOptimization": false,
+  "C_Cpp_Runner.msvcSecureNoWarnings": false,
+  "files.associations": {
+    "debug_driver.h": "c",
+    "led_driver.h": "c",
+    "H:/Keil_v5/ARM/ARMCC/include/stdint.h": "c",
+    "stm32f4xx.h": "c",
+    "stm32f4xx_hal.h": "c",
+    "stm32f4xx_hal_conf.h": "c",
+    "crc_driver.h": "c",
+    "sys_uart_driver.h": "c",
+    "bootloader.h": "c",
+    "stdarg.h": "c",
+    "tcp_driver.h": "c",
+    "stdio.h": "c",
+    "wwdg_driver.h": "c",
+    "base_function.h": "c",
+    "uart_debug_driver.h": "c",
+    "string.h": "c"
+  },
+  "idf.adapterTargetName": "esp32s3",
+  "idf.openOcdConfigs": [
+    "board/esp32s3-builtin.cfg"
+  ],
+  "C_Cpp.errorSquiggles": "enabled",
+  "commentTranslate.hover.enabled": true,
+  "cmake.sourceDirectory": "H:/Personal_Project_V1.0/Working_Area/Personal_Project/STM32/STM32F407/STM32F407ZGT6_Embedded_Boot_V1.0/Drivers/CMSIS/DSP/Source/BayesFunctions"
+}

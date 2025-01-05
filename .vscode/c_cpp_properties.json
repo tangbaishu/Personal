@@ -1,0 +1,55 @@
+{
+  "configurations": [
+    {
+      "name": "windows-gcc-x64",
+      "includePath": [
+        "H:/Keil_v5/ARM/ARMCC/include",
+        "${workspaceFolder}/**",
+        "${workspaceFolder}/Core/Inc",
+        "${workspaceFolder}/LWIP/App",
+        "${workspaceFolder}/LWIP/Target",
+        "${workspaceFolder}/Middlewares/Third_Party/LwIP/src/Include",
+        "${workspaceFolder}/Middlewares/Third_Party/LwIP/system",
+        "${workspaceFolder}/Drivers/STM32F4xx_HAL_Driver/Inc",
+        "${workspaceFolder}/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy",
+        "${workspaceFolder}/Drivers/BSP/Components/lan8742",
+        "${workspaceFolder}/Middlewares/Third_Party/LwIP/src/include/netif/ppp",
+        "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32F4xx/Include",
+        "${workspaceFolder}/Middlewares/Third_Party/LwIP/src/include/lwip",
+        "${workspaceFolder}/Middlewares/Third_Party/LwIP/src/include/lwip/apps",
+        "${workspaceFolder}/Middlewares/Third_Party/LwIP/src/include/lwip/priv",
+        "${workspaceFolder}/Middlewares/Third_Party/LwIP/src/include/lwip/prot",
+        "${workspaceFolder}/Middlewares/Third_Party/LwIP/src/include/netif",
+        "${workspaceFolder}/Middlewares/Third_Party/LwIP/src/include/compat/posix",
+        "${workspaceFolder}/Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa",
+        "${workspaceFolder}/Middlewares/Third_Party/LwIP/src/include/compat/posix/net",
+        "${workspaceFolder}/Middlewares/Third_Party/LwIP/src/include/compat/posix/sys",
+        "${workspaceFolder}/Middlewares/Third_Party/LwIP/src/include/compat/stdc",
+        "${workspaceFolder}/Middlewares/Third_Party/LwIP/system/arch",
+        "${workspaceFolder}/Drivers/CMSIS/Include",
+        "${workspaceFolder}/User/Application_Layer",
+        "${workspaceFolder}/User/Business_Logic_Layer",
+        "${workspaceFolder}/User/Function_Module_Layer",
+        "${workspaceFolder}/User/Hardware_Driver_Layer"
+
+      ],
+      "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "__CC_ARM",
+                "DEBUG_PRINTF_OPEN",
+                "USE_HAL_DRIVER",
+                "STM32F407xx"
+            ],
+      // "compilerPath": "D:/mingw64/bin/gcc.exe",  // gcc 编译器
+      "cStandard": "${default}",
+      "cppStandard": "${default}",
+      "intelliSenseMode": "windows-gcc-x64",
+      "compilerArgs": [
+        ""
+      ]
+    }
+  ],
+  "version": 4
+}
