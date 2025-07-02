@@ -156,7 +156,7 @@ int fputc(int ch, FILE *_File)
 	// HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 0xff);
 	// HAL_UART_Transmit_IT(&huart1, (uint8_t *)&ch, 1);
 	return ch;
-	} // end int fputc(int _Ch,FILE *_File)
+} // end int fputc(int _Ch,FILE *_File)
 /* USART1 init function */
 
 static void UART1_Driver_Init(void)

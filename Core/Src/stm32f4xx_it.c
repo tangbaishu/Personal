@@ -20,9 +20,10 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f4xx_it.h"
+#include "func_hardware_api.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "uart_debug_driver.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -188,7 +189,7 @@ void SysTick_Handler(void)
   /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();
   /* USER CODE BEGIN SysTick_IRQn 1 */
-  DMA_UART1_Buff_ckeck();
+  // DMA_UART1_Buff_ckeck();
   /* USER CODE END SysTick_IRQn 1 */
 }
 
@@ -227,6 +228,22 @@ void ETH_WKUP_IRQHandler(void)
   /* USER CODE END ETH_WKUP_IRQn 1 */
 }
 
-/* USER CODE BEGIN 1 */
+// /* USER CODE BEGIN 1 */
+// //USART1_IRQ
+// void USART1_IRQHandler(void)
+// {
+//     HAL_UART_IRQHandler(&UART1_DMA_Driver.Derivant.UART_Config);
+// }
 
-/* USER CODE END 1 */
+// //DMA_USART1_TX_IRQ
+// void DMA2_Stream7_IRQHandler(void)
+// {
+//   HAL_DMA_IRQHandler(&UART1_DMA_Driver.Derivant.UART_Tx_DMA_Config);
+// }
+
+// //DMA_USART1_RX_IRQ
+// void DMA2_Stream5_IRQHandler(void)
+// {
+//     HAL_DMA_IRQHandler(&UART1_DMA_Driver.Derivant.UART_Rx_DMA_Config);
+// }
+// /* USER CODE END 1 */

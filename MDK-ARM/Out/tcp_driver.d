@@ -75,7 +75,6 @@
 .\out\tcp_driver.o: ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/icmp.h
 .\out\tcp_driver.o: ..\User\Hardware_Driver_Layer\uart_debug_driver.h
 .\out\tcp_driver.o: ../Core/Inc/usart.h
-.\out\tcp_driver.o: ../User/Business_Logic_Layer/running_record.h
 .\out\tcp_driver.o: ../LWIP/App/lwip.h
 .\out\tcp_driver.o: ../Middlewares/Third_Party/LwIP/src/include/netif/etharp.h
 .\out\tcp_driver.o: ../Middlewares/Third_Party/LwIP/src/include/lwip/etharp.h

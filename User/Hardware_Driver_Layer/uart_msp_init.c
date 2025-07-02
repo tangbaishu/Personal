@@ -5,7 +5,6 @@
 
 void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
 {
-
   GPIO_InitTypeDef GPIO_InitStruct = {0};
   if(uartHandle->Instance==USART1)
   {
@@ -38,11 +37,6 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
     GPIO_InitStruct.Alternate = GPIO_AF7_USART3;
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
-	// GPIO_InitStruct.Pin = GPIO_PIN_11;
-	// GPIO_InitStruct.Mode = GPIO_MODE_AF_OD;
-	// GPIO_InitStruct.Pull = GPIO_PULLUP;
-	// HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
   }
 }
 
@@ -59,7 +53,6 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
     PA10     ------> USART1_RX
     */
     HAL_GPIO_DeInit(GPIOA, GPIO_PIN_9|GPIO_PIN_10);
-	Init_Finish_Flag = 0;
   }
   else if (uartHandle->Instance==USART3)
   {

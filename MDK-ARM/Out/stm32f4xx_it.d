@@ -36,7 +36,7 @@
 .\out\stm32f4xx_it.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 .\out\stm32f4xx_it.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_wwdg.h
 .\out\stm32f4xx_it.o: ../Core/Inc/stm32f4xx_it.h
-.\out\stm32f4xx_it.o: ../User/Hardware_Driver_Layer/uart_debug_driver.h
-.\out\stm32f4xx_it.o: ../Core/Inc/usart.h
-.\out\stm32f4xx_it.o: ../User/Hardware_Driver_Layer/base_function.h
+.\out\stm32f4xx_it.o: ../User/Function_Module_Layer/func_hardware_api.h
+.\out\stm32f4xx_it.o: ../User/Hardware_Driver_Layer/uart_driver.h
+.\out\stm32f4xx_it.o: ../User/Hardware_Driver_Layer/my_base_function.h
 .\out\stm32f4xx_it.o: H:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

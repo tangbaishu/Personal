@@ -21,19 +21,27 @@ Target DLL:      Segger\JL2CM3.dll V2.99.40.0
 Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
-H:\Personal_Project_V1.0\Working_Area\Personal_Project\STM32\STM32F407\STM32F407ZGT6_Embedded_Boot_V1.0\MDK-ARM\STM32F407ZGT6_Embedded_V1.0.uvprojx
-Project File Date:  01/04/2025
+H:\Personal_Project_V1.0\Working_Area\Personal_Project\STM32\STM32F407_Project\STM32F407ZGT6_Embedded_Boot_V1.1\MDK-ARM\STM32F407ZGT6_Embedded_V1.0.uvprojx
+Project File Date:  04/22/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'H:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'STM32F407ZGT6_Embedded_V1.0'
-compiling uart_debug_driver.c...
+compiling main.c...
 linking...
-Program Size: Code=12548 RO-data=456 RW-data=48 ZI-data=4784  
-FromELF: creating hex file...
-After Build - User command #1: fromelf.exe --bin -o "H:\Personal_Project_V1.0\Working_Area\Personal_Project\STM32\STM32F407\STM32F407ZGT6_Embedded_Boot_V1.0\MDK-ARM\Out\STM32F407ZGT6_Embedded_V1.bin" "H:\Personal_Project_V1.0\Working_Area\Personal_Project\STM32\STM32F407\STM32F407ZGT6_Embedded_Boot_V1.0\MDK-ARM\Out\STM32F407ZGT6_Embedded_V1.0"
-After Build - User command #2: fromelf.exe --text -c -o "H:\Personal_Project_V1.0\Working_Area\Personal_Project\STM32\STM32F407\STM32F407ZGT6_Embedded_Boot_V1.0\MDK-ARM\Out\STM32F407ZGT6_Embedded_V1.asm" "H:\Personal_Project_V1.0\Working_Area\Personal_Project\STM32\STM32F407\STM32F407ZGT6_Embedded_Boot_V1.0\MDK-ARM\Out\STM32F407ZGT6_Embedded_V1.0"
-".\Out\STM32F407ZGT6_Embedded_V1.0" - 0 Error(s), 0 Warning(s).
+.\Out\STM32F407ZGT6_Embedded_V1.0: Error: L6218E: Undefined symbol UART_Driver_DMA_Init (referred from func_hardware_api.o).
+.\Out\STM32F407ZGT6_Embedded_V1.0: Error: L6218E: Undefined symbol UART_Driver_Init (referred from func_hardware_api.o).
+.\Out\STM32F407ZGT6_Embedded_V1.0: Error: L6218E: Undefined symbol UART_Driver_Rx_Data_DMA (referred from driver_example.o).
+.\Out\STM32F407ZGT6_Embedded_V1.0: Error: L6218E: Undefined symbol UART_Driver_Rx_Data_IT (referred from driver_example.o).
+.\Out\STM32F407ZGT6_Embedded_V1.0: Error: L6218E: Undefined symbol UART_Driver_Tx_Data (referred from driver_example.o).
+.\Out\STM32F407ZGT6_Embedded_V1.0: Error: L6218E: Undefined symbol UART_Driver_Tx_Data_DMA (referred from driver_example.o).
+.\Out\STM32F407ZGT6_Embedded_V1.0: Error: L6218E: Undefined symbol UART_Driver_Tx_Data_IT (referred from driver_example.o).
+.\Out\STM32F407ZGT6_Embedded_V1.0: Error: L6218E: Undefined symbol UART_Rx_Process (referred from driver_example.o).
+.\Out\STM32F407ZGT6_Embedded_V1.0: Error: L6218E: Undefined symbol Data_Buff_Queue_Init (referred from uart_debug_driver.o).
+Not enough information to list image symbols.
+Not enough information to list load addresses in the image map.
+Finished: 2 information, 0 warning and 9 error messages.
+".\Out\STM32F407ZGT6_Embedded_V1.0" - 9 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -56,7 +64,8 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.5.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Build Time Elapsed:  00:00:01
+Target not created.
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

@@ -21,17 +21,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "uart_debug_driver.h"
-#include "uart3_driver.h"
-#include "crc_driver.h"
-#include "base_function.h"
-#include "flash_driver.h"
-#include "wwdg_driver.h"
-#include "LED_Driver.h"
-
 #include "BootLoader.h"
 
-#include "lwip.h"
 
 void SystemClock_Config(void);
 
@@ -44,50 +35,8 @@ int main(void)
     HAL_Init();
 	SystemClock_Config();
 	HAL_Delay(1000);	// 上电延时
-	
-	LED_Driver_Init();
-	LED_Driver_Check();
-    DMA_UART_Debug_Driver_Init();
-    // CRC_Driver_Init();
-    // MX_LWIP_Init();
-	// IWDG_Init();
-	// WWDG_Init();
-    DMA_Sprintf("BOOT\t STM32F407ZGT6_Embedded_Init_Success\r\n");
-	UART3_DMA_Driver_Init();
-//	Test_Flash();
-    //  Jump_Code_District(1);
-    // DMA_Sprintf("Jump Fail!!!\r\n");
-    uint8_t test_data[]={0x12,0x23,0x34};
-    UART3_Send_Hex_Data(test_data, sizeof(test_data));
-    // CRC_Start();
-	// UART3_Driver_Data.Receive_Buffer_Area[0] = 0xa1;
-	// UART3_Driver_Data.Receive_Buffer_Area[1] = 0xa2;
-	// UART3_Driver_Data.Receive_Buffer_Area[2] = 0xa3;
-	// UART3_Driver_Data.Receive_Buffer_Area[3] = 0xa4;
-	// DMA_Sprintf_String((uint8*)&UART3_Driver_Data.Receive_Buffer_Area[0], 3);
-    UART3_Receive_Data_Wait(UART3_Driver_Data.Receive_Buffer_Area, 50, 0xefffffff);
-    printf("UART3_Receiv_Finish\r\n");
     while (1)
     {
-		WDG_CLEAR();
-		if(SYS_UartDMA_Rx_Queue.Rec_Finish_Flag)
-        {
-            SYS_UartDMA_Rx_Queue.Rec_Finish_Flag = 0;
-            DMA_Sprintf_String(SYS_UartDMA_Rx_Queue.Data_Buff.Data, SYS_UartDMA_Rx_Queue.Data_Buff.Len);
-            
-        }
-        if(UART3_Driver_Data.Rec_Data_Finish == 1)
-        {
-            printf("UART3_Receiv_Data\r\n");
-            UART3_Driver_Data.Rec_Data_Finish=0;
-            DMA_Sprintf_String((uint8*)&UART3_Driver_Data.Receive_Buffer_Area[0], UART3_Driver_Data.Valid_Buffer_Data_Len);
-            UART3_Send_Hex_Data(UART3_Driver_Data.Receive_Buffer_Area, UART3_Driver_Data.Valid_Buffer_Data_Len);
-        }
-        if(UART3_Driver_Data.test_1 != 0 && UART3_Driver_Data.test_2 != 0)
-        {
-            HAL_Delay(500);
-            printf("test_1 = %d, test_2 = %d \r\n", UART3_Driver_Data.test_1, UART3_Driver_Data.test_2);
-        }
 		
         //        MX_LWIP_Process();
         //        DMA_UART1_Buff_ckeck();

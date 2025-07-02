@@ -54,7 +54,7 @@
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
           <DebugInformation>1</DebugInformation>
-          <BrowseInformation>0</BrowseInformation>
+          <BrowseInformation>1</BrowseInformation>
           <ListingPath></ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
@@ -975,34 +975,26 @@
         </Group>
         <Group>
           <GroupName>User/Function_Module_Layer</GroupName>
+          <Files>
+            <File>
+              <FileName>func_hardware_api.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Function_Module_Layer\func_hardware_api.c</FilePath>
+            </File>
+            <File>
+              <FileName>driver_example.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Function_Module_Layer\driver_example.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>User/Hardware_Driver_Layer</GroupName>
           <Files>
             <File>
-              <FileName>base_function.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\Hardware_Driver_Layer\base_function.c</FilePath>
-            </File>
-            <File>
-              <FileName>basetimer_driver.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\Hardware_Driver_Layer\basetimer_driver.c</FilePath>
-            </File>
-            <File>
               <FileName>bootloader.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\Hardware_Driver_Layer\bootloader.c</FilePath>
-            </File>
-            <File>
-              <FileName>crc_driver.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\Hardware_Driver_Layer\crc_driver.c</FilePath>
-            </File>
-            <File>
-              <FileName>flash_diver.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\Hardware_Driver_Layer\flash_diver.c</FilePath>
             </File>
             <File>
               <FileName>iwdg_driver.c</FileName>
@@ -1030,6 +1022,16 @@
               <FilePath>..\User\Hardware_Driver_Layer\uart_msp_init.c</FilePath>
             </File>
             <File>
+              <FileName>my_base_function.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Hardware_Driver_Layer\my_base_function.c</FilePath>
+            </File>
+            <File>
+              <FileName>basetimer_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Hardware_Driver_Layer\basetimer_driver.c</FilePath>
+            </File>
+            <File>
               <FileName>tcp_driver.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\Hardware_Driver_Layer\tcp_driver.c</FilePath>
@@ -1038,11 +1040,6 @@
               <FileName>uart_debug_driver.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\Hardware_Driver_Layer\uart_debug_driver.c</FilePath>
-            </File>
-            <File>
-              <FileName>uart3_driver.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\Hardware_Driver_Layer\uart3_driver.c</FilePath>
             </File>
           </Files>
         </Group>

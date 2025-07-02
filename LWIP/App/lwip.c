@@ -61,7 +61,7 @@ uint8_t GATEWAY_ADDRESS[4];
   */
 void MX_LWIP_Init(void)
 {
-    Ethernet_GPIO_Init();
+   Ethernet_GPIO_Init();
   /* IP addresses initialization */
   IP_ADDRESS[0] = 192;
   IP_ADDRESS[1] = 168;

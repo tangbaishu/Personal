@@ -150,7 +150,10 @@
     "wwdg_driver.h": "c",
     "base_function.h": "c",
     "uart_debug_driver.h": "c",
-    "string.h": "c"
+    "string.h": "c",
+    "uart_driver.h": "c",
+    "stm32f4xx_it.h": "c",
+    "driver_example.h": "c"
   },
   "idf.adapterTargetName": "esp32s3",
   "idf.openOcdConfigs": [

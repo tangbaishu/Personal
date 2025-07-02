@@ -135,7 +135,7 @@ void Uint8_Convert_Uint32(uint8 *p_uint8, uint32 *p_uint32)
     {
         *p_uint32 = (*p_uint32 << 8) + p_uint8[num];
     }
-} // end void Uint8_Convert_Uint64(uint8 *p_uint8, uint64 *p_uint64)
+} // end void Uint8_Convert_Uint32(uint8 *p_uint8, uint32 *p_uint32)
 
 /**
  * 5字节数据合并成 64位类型数据（实际有效位为40位）

@@ -1,6 +1,5 @@
 #include "tcp_driver.h"
 #include "uart_debug_driver.h"
-#include "running_record.h"
 #include "lwip.h"
 #include "arch.h"
 #include "string.h"
@@ -90,7 +89,7 @@ Return_Status TCP_Driver_Bind(void)
 {
 	if(TCP_Driver_Data.TCP_Driver_State.Tcp_Pcb_Clear_Flag) 	// 若已为 tcp_pcb 变量分配空间
 	{
-		DMA_Sprintf("TCP_Driver_Bind() tcp_pcb != NULL\r\n");
+		//DMA_Sprintf("TCP_Driver_Bind() tcp_pcb != NULL\r\n");
 		if( ERR_OK == tcp_close(TCP_Driver_Data.TCP_Driver_Pcb) ) // 释放之前的 tcp_pcb 变量空间
 		{
 			TCP_Driver_Data.TCP_Driver_State.Tcp_Pcb_Clear_Flag = 0;
@@ -104,14 +103,14 @@ Return_Status TCP_Driver_Bind(void)
 	TCP_Driver_Data.TCP_Driver_Pcb = tcp_new();
 	if(NULL == TCP_Driver_Data.TCP_Driver_Pcb)
 	{
-		DMA_Sprintf("Error!!!\t tcp_new() Error:return NULL\r\n");
+		//DMA_Sprintf("Error!!!\t tcp_new() Error:return NULL\r\n");
 		return RETURN_ERROR;
 	}
 	TCP_Driver_Data.TCP_Driver_State.Tcp_Pcb_Clear_Flag = 1;	// 若已为 tcp_pcb 变量分配空间
 
 	if(ERR_OK != tcp_bind(TCP_Driver_Data.TCP_Driver_Pcb, &TCP_Driver_Data.Config.IP_Config.Client_IP_Addr, TCP_Driver_Data.Config.IP_Config.Client_Port))	// 绑定自身IP地址
 	{
-		DMA_Sprintf("Error!!!\t tcp_bind() Error:return !ERR_OK\r\n");
+		//DMA_Sprintf("Error!!!\t tcp_bind() Error:return !ERR_OK\r\n");
 		return RETURN_ERROR;
 	}
 
@@ -129,7 +128,7 @@ Return_Status TCP_Driver_Connect(uint8_t *dest_ip, uint16 dest_port, tcp_connect
 	err = tcp_connect(TCP_Driver_Data.TCP_Driver_Pcb, &TCP_Driver_Data.Config.IP_Config.Server_IP_Addr, dest_port, call_back_fun);
 	if( err != ERR_OK ) // 连接目标IP地址
 	{
-		DMA_Sprintf("Error!!!\t TCP_Driver_Connect(){ tcp_connect() }\r\n");
+		//DMA_Sprintf("Error!!!\t TCP_Driver_Connect(){ tcp_connect() }\r\n");
 		TCP_Error_Printf(err);
 		return RETURN_ERROR;
 	}
@@ -159,15 +158,15 @@ void TCP_Receive_Massage(void)
 
 void TCP_Error_Printf(err_t err)
 {
-	uint8 err_value = (uint8)(0 - (int)err);
-	DMA_Sprintf("TCP_Error_Callback(): err = %d\r\n", err_value);
-	DMA_Sprintf_String((uint8 *)&ETH_Err_Event[err_value][0], strlen(&ETH_Err_Event[err_value][0]));
-	DMA_Sprintf_String("\r\n", strlen("\r\n"));
+//	uint8 err_value = (uint8)(0 - (int)err);
+	//DMA_Sprintf("TCP_Error_Callback(): err = %d\r\n", err_value);
+	//DMA_Sprintf_String((uint8 *)&ETH_Err_Event[err_value][0], strlen(&ETH_Err_Event[err_value][0]));
+	//DMA_Sprintf_String("\r\n", strlen("\r\n"));
 }
 
 void TCP_State_Printf(uint8 state_addr)
 {
-	DMA_Sprintf_String("TCP_State:",strlen("TCP_State:"));
-	DMA_Sprintf_String((uint8 *)&ETH_State[state_addr][0], strlen(&ETH_State[state_addr][0]));
-	DMA_Sprintf_String("\r\n", strlen("\r\n"));
+	//DMA_Sprintf_String("TCP_State:",strlen("TCP_State:"));
+	//DMA_Sprintf_String((uint8 *)&ETH_State[state_addr][0], strlen(&ETH_State[state_addr][0]));
+	//DMA_Sprintf_String("\r\n", strlen("\r\n"));
 }
