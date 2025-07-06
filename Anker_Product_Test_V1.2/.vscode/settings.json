@@ -1,0 +1,11 @@
+{
+	"files.associations": {
+		"pd_message_variable.h": "c",
+		"iic_slave_global_variables_policy.h": "c",
+		"array": "c",
+		"string": "c",
+		"string_view": "c",
+		"pd_message_decode.h": "c",
+		"time.h": "c"
+	}
+}

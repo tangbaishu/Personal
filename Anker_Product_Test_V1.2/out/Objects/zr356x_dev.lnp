@@ -1,0 +1,19 @@
+--cpu Cortex-M0
+"..\out\objects\startup_cmsdk_cm0.o"
+"..\out\objects\main.o"
+"..\out\objects\serial.o"
+"..\app\src\SW356x_v1.7.1.lib"
+"..\out\objects\iic_slave_drive_policy.o"
+"..\out\objects\iic_slave_init_policy.o"
+"..\out\objects\iic_slave_main_policy.o"
+"..\out\objects\iic_slave_read_policy.o"
+"..\out\objects\iic_slave_write_policy.o"
+"..\out\objects\iic_slave_global_variables_policy.o"
+"..\out\objects\iic_slave_callback_policy.o"
+"..\out\objects\device_compatibility_policy.o"
+"..\out\objects\anker_policy.o"
+"..\out\objects\pd_message_decode.o"
+--library_type=microlib --strict --scatter "..\out\Objects\zr356x_dev.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "..\out\Listings\zr356x_dev.map" -o ..\out\Objects\zr356x_dev.axf
