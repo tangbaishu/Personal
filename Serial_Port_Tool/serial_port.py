@@ -2,6 +2,8 @@ import serial.tools
 import serial.tools.list_ports
 import time
 import json
+import array
+from my_type_conversion import *
 
 # 获取所有可用的串行端口
 Ports = serial.tools.list_ports.comports()
@@ -61,47 +63,53 @@ def Serial_Port_APP_Init(select_device_info, baud_rate):
 		print("无可用串行端口")
 	return False
 
-def Serial_Transfer(User_Serial_Port, send_byte_array, once_send_len):
-	send_finish_flag = 0
-	while True:
-		try:
-			if(send_finish_flag == 0):
-				try:
-					for i in range (0, int(len(send_byte_array) / once_send_len), 1):
-						# cache_data = (send_byte_array[i*once_send_len : once_send_len + i*once_send_len]).encode()
-						cache_data = (send_byte_array[i*once_send_len : once_send_len + i*once_send_len])
-						print(cache_data)
-						User_Serial_Port.write((cache_data))	# 发送字符串数据，记得转换为字节串
-						time.sleep(0.5)
-					if(int(len(send_byte_array) % once_send_len ) != 0):
-						# cache_data = (send_byte_array[(int(len(send_byte_array) / once_send_len) * once_send_len) : len(send_byte_array)]).encode()
-						cache_data = (send_byte_array[(int(len(send_byte_array) / once_send_len) * once_send_len) : len(send_byte_array)])
-						print(cache_data)
-						User_Serial_Port.write((cache_data))	# 发送字符串数据，记得转换为字节串
-						time.sleep(0.5)
-					send_finish_flag = 1
-				except serial.SerialException as e:
-					print(f"写入串口失败: {e}")
-			if User_Serial_Port.in_waiting > 0:
-				print("接受的数据长度=", User_Serial_Port.in_waiting)
-				read_data = User_Serial_Port.readline()
-				print("read_data = ", read_data)
-				# receive_string = read_data.decode('utf-8')
-				receive_string = read_data.decode().strip()
-				Receive_UTF8 = receive_string
-				print(f"接受到的数据：{Receive_UTF8}")
-			else:
-				time.sleep(1)
-				print("runing")
-		except serial.SerialException as e:
-					print(f"串口通信错误：{e}")
-					break
+def Serial_Send(User_Serial_Port, send_byte_array, once_send_len):
+	try:
+		for i in range (0, int(len(send_byte_array) / once_send_len), 1):
+			# cache_data = (send_byte_array[i*once_send_len : once_send_len + i*once_send_len]).encode()
+			cache_data = (send_byte_array[i*once_send_len : once_send_len + i*once_send_len])
+			print(cache_data)
+			User_Serial_Port.write((cache_data))	# 发送字符串数据，记得转换为字节串
+			time.sleep(0.5)
+		if(int(len(send_byte_array) % once_send_len ) != 0):
+			# cache_data = (send_byte_array[(int(len(send_byte_array) / once_send_len) * once_send_len) : len(send_byte_array)]).encode()
+			cache_data = (send_byte_array[(int(len(send_byte_array) / once_send_len) * once_send_len) : len(send_byte_array)])
+			print(cache_data)
+			User_Serial_Port.write((cache_data))	# 发送字符串数据，记得转换为字节串
+			time.sleep(0.5)
+		send_finish_flag = 1
+	except serial.SerialException as e:
+		print(f"串口数据发送失败: {e}")
+
+def Serial_Receive(User_Serial_Port):
+	try:
+		while(User_Serial_Port.in_waiting > 0):
+			print("接受的数据长度=", User_Serial_Port.in_waiting)
+			read_data = User_Serial_Port.readline()
+			print("read_data = ", read_data)
+			# receive_string = read_data.decode('utf-8')
+			receive_string = read_data.decode().strip()
+			Receive_UTF8 = receive_string
+			print(f"Rec:{Receive_UTF8}")
+		else:
+			time.sleep(1)
+	except serial.SerialException as e:
+		print(f"串口通信错误：{e}")
 
 if __name__ == "__main__":
 	test_str = "test_str12345"
+	# test_str = [0,1,2,3,4,5,6]
+	# uint_type = array.array('B')
+	# uint_type = [''] * len(test_str)
+	# for i in range(0, len(test_str), 1):
+	# 	if
+	# 	uint_type[i] = int(test_str[i])
+	# 	print(f"uint_type[{i}] = {uint_type[i]}")
+	uint_type = string_cover_uint(test_str)
 	User_Serial_Port = Serial_Port_APP_Init("CH340", 921600)
 	if(User_Serial_Port != False):
-		Serial_Transfer(User_Serial_Port, test_str,1)
-	
+		while(1):
+			Serial_Send(User_Serial_Port, uint_type,1)
+			Serial_Receive(User_Serial_Port)
 	# Send_Info()
 	input()
