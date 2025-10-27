@@ -8,12 +8,8 @@ from my_type_conversion import *
 # 获取所有可用的串行端口
 Ports = serial.tools.list_ports.comports()
 Receive_UTF8 = "这是一个全局变量"
-<<<<<<< HEAD
-
-=======
 Target_String = "CRC_ERR regAddr"
-Trigger_Target_String = ''
->>>>>>> 6885071a4f0b6edc131375d09f4455e538c6f1b6
+Trigger_Target_String = '' 
 
 
 # 变量可用的串行端口，并输出第一个检索到的
@@ -86,21 +82,6 @@ def Serial_Send(User_Serial_Port, send_byte_array, once_send_len):
 	except serial.SerialException as e:
 		print(f"串口数据发送失败: {e}")
 
-<<<<<<< HEAD
-def Serial_Receive(User_Serial_Port):
-	try:
-		while(User_Serial_Port.in_waiting > 0):
-			print("接受的数据长度=", User_Serial_Port.in_waiting)
-			read_data = User_Serial_Port.readline()
-			print("read_data = ", read_data)
-			# receive_string = read_data.decode('utf-8')
-			receive_string = read_data.decode().strip()
-			Receive_UTF8 = receive_string
-			print(f"Rec:{Receive_UTF8}")
-		else:
-			time.sleep(1)
-=======
-
 def Serial_Receive(User_Serial_Port):
 	global Trigger_Target_String
 	try:
@@ -114,31 +95,17 @@ def Serial_Receive(User_Serial_Port):
 			if (Target_String in Trigger_Target_String) == False:
 				Trigger_Target_String = Receive_UTF8
 			print(f"Rec:{Receive_UTF8}")
->>>>>>> 6885071a4f0b6edc131375d09f4455e538c6f1b6
 	except serial.SerialException as e:
 		print(f"串口通信错误：{e}")
 
 if __name__ == "__main__":
 	test_str = "test_str12345"
-<<<<<<< HEAD
-=======
-	Trigger_Target_String = ''
->>>>>>> 6885071a4f0b6edc131375d09f4455e538c6f1b6
-	# test_str = [0,1,2,3,4,5,6]
-	# uint_type = array.array('B')
-	# uint_type = [''] * len(test_str)
-	# for i in range(0, len(test_str), 1):
-	# 	if
-	# 	uint_type[i] = int(test_str[i])
-	# 	print(f"uint_type[{i}] = {uint_type[i]}")
-	uint_type = string_cover_uint(test_str)
-<<<<<<< HEAD
-	User_Serial_Port = Serial_Port_APP_Init("CH340", 921600)
-	if(User_Serial_Port != False):
-		while(1):
-			Serial_Send(User_Serial_Port, uint_type,1)
-			Serial_Receive(User_Serial_Port)
-=======
+	# uint_type = string_cover_uint(test_str)
+	# User_Serial_Port = Serial_Port_APP_Init("CH340", 921600)
+	# if(User_Serial_Port != False):
+	# 	while(1):
+	# 		Serial_Send(User_Serial_Port, uint_type,1)
+	# 		Serial_Receive(User_Serial_Port)
 	User_Serial_Port = Serial_Port_APP_Init("CH340", 2000000)
 	print(Target_String)
 	if(User_Serial_Port != False):
@@ -148,6 +115,4 @@ if __name__ == "__main__":
 			if Target_String in Trigger_Target_String:
 				print(f"接收到目标数据: {Trigger_Target_String}")
 				time.sleep(1)
->>>>>>> 6885071a4f0b6edc131375d09f4455e538c6f1b6
-	# Send_Info()
-	input()
+	# input()
